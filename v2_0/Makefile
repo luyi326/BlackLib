@@ -26,10 +26,9 @@ LIBS    =
 # Should not alter anything below this line
 ###############################################################################
 
-SRC	=	BlackADC.cpp BlackCore.cpp				\
+SRC	=	BlackCore.cpp BlackADC.cpp				\
 		BlackGPIO.cpp BlackI2C.cpp				\
 		BlackPWM.cpp BlackSPI.cpp				\
-		BlackADC.cpp BlackCore.cpp				\
 		BlackUART.cpp
 
 OBJ	=	$(SRC:.c=.o)

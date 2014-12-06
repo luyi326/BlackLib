@@ -46,7 +46,7 @@ $(STATIC):	$(OBJ)
 
 $(DYNAMIC):	$(OBJ)
 	@echo "[Link (Dynamic)]"
-	@$(CC) -shared -Wl,-soname,libblackLib.so -o libblackLib.so.$(VERSION) -lpthread $(OBJ)
+	@$(CC) -std=c++0x -shared -Wl,-soname,libblackLib.so -o libblackLib.so.$(VERSION) -lpthread $(OBJ)
 
 .c.o:
 	@echo [Compile] $<

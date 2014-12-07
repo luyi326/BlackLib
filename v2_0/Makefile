@@ -41,13 +41,13 @@ $(STATIC):	$(OBJ)
 	@echo "[Link (Static)]"
 	@ar rcs $(STATIC) $(OBJ)
 	@ranlib $(STATIC)
-#	@size   $(STATIC)
 
 $(DYNAMIC):	$(OBJ)
 	@echo "[Link (Dynamic)]"
-	@$(CC) -std=c++0x -shared -Wl,-soname,libblackLib.so -o libblackLib.so.$(VERSION) -lpthread $(OBJ)
+	@echo $(OBJ)
+	@$(CC) -shared -Wl,-soname,libblackLib.so -o libblackLib.so.$(VERSION) -lpthread $(OBJ)
 
-.c.o:
+.cpp.o:
 	@echo [Compile] $<
 	@$(CC) -c $(CFLAGS) $< -o $@
 
@@ -114,7 +114,6 @@ depend:
 
 # DO NOT DELETE
 
-BlackLib.o: BlackCore.h BlackADC.h BlackPWM.h BlackGPIO.h BlackUART.h BlackSPI.h BlackI2C.h
 BlackADC.o: BlackCore.h
 BlackCore.o: BlackErr.h BlackDef.h
 BlackGPIO.o: BlackCore.h

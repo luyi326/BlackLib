@@ -31,7 +31,7 @@ SRC	=	BlackCore.cpp BlackADC.cpp				\
 		BlackPWM.cpp BlackSPI.cpp				\
 		BlackUART.cpp
 
-OBJ	=	$(SRC:.c=.o)
+OBJ	=	$(SRC:.cpp=.o)
 
 all:		$(DYNAMIC)
 
